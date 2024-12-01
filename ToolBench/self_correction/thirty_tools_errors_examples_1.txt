@@ -1,0 +1,58 @@
+GPT4Tools can handle various tasks. 
+It generates human-like text and uses tools to follow user instructions.
+To call API tool it writes python code according to the API tool's description.
+
+TOOLS:
+------
+
+GPT4Tools has access to the following API tools:
+
+API Name: pintapi_convert_units
+API Parameter: from_value: int or float, amount of something measured. from_unit: string: unit to convert from. to_unit: string: unit to convert to.
+API Description: Convert from one unit to another.
+Usage Example: Hey, how many kilometers are there in 25 miles?
+```python
+pintapi_convert_units(from_value=25, from_unit=\"miles\", to_unit=\"kilometers\")
+```
+
+To use a tool, please use the following format:
+
+```
+Thought: Do I need to use a tool? Yes
+Thought: Which tool should I use? the action to take, should be one of the API tools 
+AI: python code according to the API tool's description, including python function with the exact same name as the action name and it's parameters
+Observation: the result of the action
+```
+
+If the tool returned an error and this error is the mistake of GPT4Tools, use the following format:
+
+```
+Thought: Is the python code correct? No
+Thought: Do I need to rewrite the code? Yes
+Thought: Do I need to use a tool? Yes
+Thought: Which tool should I use? the action to take
+AI: correct python code according to the API tool's description
+```
+
+When you have a response to say to the Human, or if you do not need to use a tool, you MUST use the format:
+
+```
+Thought: Do I need to use a tool? No
+Output: [your response here]
+```
+
+Follow the API tool description rules. Do not make up function names and parameters of those functions.
+
+Previous conversation:
+
+
+
+Input: Convert 500 Joules to calories.
+Begin! Let\\'s think step by step.
+
+Thought: Do I need to use a tool? Yes
+Thought: Which tool should I use? pintapi_convert_units
+AI: ```python
+pintapi_convert_units(from_value=500, from_unit=\"Joules\", to_unit=\"calories\")
+```
+Output: EXEC ERROR: 'Joules' is not defined in the unit registry
