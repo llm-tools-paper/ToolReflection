@@ -1,36 +1,17 @@
 # ToolReflection
 
-This is a benchmark and a instruction tuning data which aim to enhance and assess tool usage capabilities of LLMs.
+This repository contains supplementary materials for the paper *"ToolReflection: Improving Large Language Models for Real-World API Calls Through Self-Generated Data."*
 
-### Benchmark
+In this paper, we conduct experiments using the following frameworks: `GPT4Tools`, `ToolAlpaca`, and `ToolBench`.
 
-The list of APIs used
+The repository provides our code, including generation prompts, error generation scripts, and augmented datasets for each framework. These materials are organized into separate folders, each containing:
+- The original code for fine-tuning and evaluating the models.
+- Our modifications and enhancements.
+- Code for generating tool invocation chains with errors and their corrections (the **ToolReflection** approach).
 
-- Units conversion API https://github.com/hgrecco/pint
-
-- Geolocation API https://geocoder.readthedocs.io
-
-- Time conversion API https://pypi.org/project/pytz/
-
-- Nutrition analysis API https://api.edamam.com
-
-The data can be found in the ```data``` folder
-
-* ```original_data.json``` contains evaluation examples 
-
-* ```parameter_descriptions_data.json``` contains evaluation examples with detailed parameter descriptions
-
-* ```parameter_descriptions_and_usage_examples_data.json``` contains evaluation examples with detailed parameter descriptions and a single usage example
-
-
-### Evaluation
-
-To evaluate your model, please follow the [scripts/generate.sh](./scripts/generate.sh) 
-
-### Instruction data
-
-The dataset consits of 141 diverse tool and parameter descriptions. For each tool up to 23 examples of tool usage were generated. The data can be found in the 
-    
-
+Additionally, we introduce specific improvements for each framework. For example:
+- In the `GPT4Tools` folder, we include:
+  - Code for augmenting the dataset with additional data, such as `GPT4FakeTools`.
+  - Additional benchmarks for more realistic evaluations, specifically `GPT4Tools-OOD` and `GPT4Tools-OOD-Hard`.
 
 
