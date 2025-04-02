@@ -28,7 +28,7 @@ def load_tools(api_data):
         )
     return tools
 
-real_tools = json.load(open('/data4/polyakov/instruction_tuning/ToolAlpaca/data/eval_real.json', 'r'))
+real_tools = json.load(open('data/eval_real.json', 'r'))
 tools = load_tools(real_tools[0])
 test_tool = tools['PublicHolidayIsTodayPublicHoliday']
 print(test_tool._run('{\"countryCode\": \"cn\", \"offset\": 1}'))

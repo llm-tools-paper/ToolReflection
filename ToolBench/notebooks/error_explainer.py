@@ -78,7 +78,7 @@ API Response:
 <api_response>
 Result:
 '''
-BASE_MODEL_NAME = '/data4/polyakov/instruction_tuning/data/Llama-2-7b-chat-hf'
+BASE_MODEL_NAME = 'data/Llama-2-7b-chat-hf'
 
 class ErrorDetector:
     def __init__(self):

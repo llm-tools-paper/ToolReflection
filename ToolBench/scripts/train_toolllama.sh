@@ -35,10 +35,10 @@
 # export CUDA_VISIBLE_DEVICES="0,1,2,3,4,5,6,7"
 
 # python -m torch.distributed.run --nproc_per_node=8 --master_port=20001 toolbench/train/train_mem.py \
-#     --model_name_or_path /data4/polyakov/instruction_tuning/data/llama-7b \
+#     --model_name_or_path data/llama-7b \
 #     --data_path  data/toolbench_new_1311/cleaned_toolllama_G123_dfs_train_downloaded1311_no_undetectable_errors_final_splitted.json \
 #     --eval_data_path  data/toolllama_G123_dfs_eval.json \
-#     --output_dir /data6/polyakov/ToolBench/toollama_7B_trained_on_data_cleaned_with_llama_2_v2/ \
+#     --output_dir toollama_7B_trained_on_data_cleaned_with_llama_2_v2/ \
 #     --conv_template tool-llama-single-round \
 #     --bf16 False \
 #     --fp16 True \
@@ -73,7 +73,7 @@
 #     --model_name_or_path /data5/about/llama2/llama-2-7b-hf \
 #     --data_path  data/toolbench_new_1311/cleaned_toolllama_G123_dfs_train_downloaded1311_no_undetectable_errors_final_splitted.json \
 #     --eval_data_path  data/toolllama_G123_dfs_eval.json \
-#     --output_dir /data6/polyakov/ToolBench/toollama_2_7B_trained_on_data_cleaned_with_llama_2/ \
+#     --output_dir toollama_2_7B_trained_on_data_cleaned_with_llama_2/ \
 #     --conv_template tool-llama-single-round \
 #     --bf16 False \
 #     --fp16 True \
@@ -105,9 +105,9 @@
 
 # python -m torch.distributed.run --nproc_per_node=8 --master_port=20001 toolbench/train/train_mem.py \
 #     --model_name_or_path /data5/about/llama-7b/ \
-#     --data_path  /data4/polyakov/instruction_tuning/ToolBench/data/toolbench_new_1311/cleaned_toolllama_G123_dfs_train_downloaded1311_no_undetectable_errors_final_train_train.json \
-#     --eval_data_path /data4/polyakov/instruction_tuning/ToolBench/data/toolbench_new_1311/cleaned_toolllama_G123_dfs_train_downloaded1311_no_undetectable_errors_final_train_val.json \
-#     --output_dir /data6/polyakov/ToolBench/toollama_7B_trained_on_data_cleaned_with_llama_2_train_part/ \
+#     --data_path  data/toolbench_new_1311/cleaned_toolllama_G123_dfs_train_downloaded1311_no_undetectable_errors_final_train_train.json \
+#     --eval_data_path data/toolbench_new_1311/cleaned_toolllama_G123_dfs_train_downloaded1311_no_undetectable_errors_final_train_val.json \
+#     --output_dir toollama_7B_trained_on_data_cleaned_with_llama_2_train_part/ \
 #     --conv_template tool-llama-single-round \
 #     --bf16 False \
 #     --fp16 True \
@@ -139,9 +139,9 @@
 
 # python -m torch.distributed.run --nproc_per_node=8 --master_port=20001 toolbench/train/train_mem.py \
 #     --model_name_or_path /data5/about/llama2/llama-2-7b-hf \
-#     --data_path  /data4/polyakov/instruction_tuning/ToolBench/data/toolbench_new_1311/cleaned_toolllama_G123_dfs_train_downloaded1311_no_undetectable_errors_final_train_train.json \
-#     --eval_data_path /data4/polyakov/instruction_tuning/ToolBench/data/toolbench_new_1311/cleaned_toolllama_G123_dfs_train_downloaded1311_no_undetectable_errors_final_train_val.json \
-#     --output_dir /data6/polyakov/ToolBench/toollama_2_7B_trained_on_data_cleaned_with_llama_2_train_part/ \
+#     --data_path  data/toolbench_new_1311/cleaned_toolllama_G123_dfs_train_downloaded1311_no_undetectable_errors_final_train_train.json \
+#     --eval_data_path data/toolbench_new_1311/cleaned_toolllama_G123_dfs_train_downloaded1311_no_undetectable_errors_final_train_val.json \
+#     --output_dir toollama_2_7B_trained_on_data_cleaned_with_llama_2_train_part/ \
 #     --conv_template tool-llama-single-round \
 #     --bf16 False \
 #     --fp16 True \
@@ -172,10 +172,10 @@
 # export CUDA_VISIBLE_DEVICES="0,1,2,3,4,5,6,7"
 
 # python -m torch.distributed.run --nproc_per_node=8 --master_port=20001 toolbench/train/train_mem.py \
-#     --model_name_or_path /data6/polyakov/ToolBench/toollama_7B_trained_on_data_cleaned_with_llama_2_train_part/checkpoint-900 \
-#     --data_path  /data4/polyakov/instruction_tuning/ToolBench/data/toolbench_new_1311/self_correction_postfinetune/new_train_full_val_full_corrections.json \
-#     --eval_data_path /data4/polyakov/instruction_tuning/ToolBench/data/toolbench_new_1311/cleaned_toolllama_G123_dfs_train_downloaded1311_no_undetectable_errors_final_train_val.json \
-#     --output_dir /data6/polyakov/ToolBench/toollama_7B_post_finetuned_full_val_error_correction/ \
+#     --model_name_or_path toollama_7B_trained_on_data_cleaned_with_llama_2_train_part/checkpoint-900 \
+#     --data_path  data/toolbench_new_1311/self_correction_postfinetune/new_train_full_val_full_corrections.json \
+#     --eval_data_path data/toolbench_new_1311/cleaned_toolllama_G123_dfs_train_downloaded1311_no_undetectable_errors_final_train_val.json \
+#     --output_dir toollama_7B_post_finetuned_full_val_error_correction/ \
 #     --conv_template tool-llama-single-round \
 #     --bf16 False \
 #     --fp16 True \
@@ -207,10 +207,10 @@
 # export CUDA_VISIBLE_DEVICES="0,1,2,3,4,5,6,7"
 
 # python -m torch.distributed.run --nproc_per_node=8 --master_port=20001 toolbench/train/train_mem.py \
-#     --model_name_or_path /data6/polyakov/ToolBench/toollama_7B_trained_on_data_cleaned_with_llama_2_train_part/checkpoint-900 \
-#     --data_path  /data4/polyakov/instruction_tuning/ToolBench/data/toolbench_new_1311/self_correction_postfinetune/new_train_half_val_full_corrections.json \
-#     --eval_data_path /data4/polyakov/instruction_tuning/ToolBench/data/toolbench_new_1311/cleaned_toolllama_G123_dfs_train_downloaded1311_no_undetectable_errors_final_train_val.json \
-#     --output_dir /data6/polyakov/ToolBench/toollama_7B_post_finetuned_half_val_error_correction/ \
+#     --model_name_or_path toollama_7B_trained_on_data_cleaned_with_llama_2_train_part/checkpoint-900 \
+#     --data_path  data/toolbench_new_1311/self_correction_postfinetune/new_train_half_val_full_corrections.json \
+#     --eval_data_path data/toolbench_new_1311/cleaned_toolllama_G123_dfs_train_downloaded1311_no_undetectable_errors_final_train_val.json \
+#     --output_dir toollama_7B_post_finetuned_half_val_error_correction/ \
 #     --conv_template tool-llama-single-round \
 #     --bf16 False \
 #     --fp16 True \
@@ -241,10 +241,10 @@
 # export CUDA_VISIBLE_DEVICES="0,1,2,3,4,5,6,7"
 
 # python -m torch.distributed.run --nproc_per_node=8 --master_port=20001 toolbench/train/train_mem.py \
-#     --model_name_or_path /data6/polyakov/ToolBench/toollama_7B_trained_on_data_cleaned_with_llama_2_train_part/checkpoint-900 \
-#     --data_path  /data4/polyakov/instruction_tuning/ToolBench/data/toolbench_new_1311/self_correction_postfinetune/new_train_half_train_full_corrections.json \
-#     --eval_data_path /data4/polyakov/instruction_tuning/ToolBench/data/toolbench_new_1311/cleaned_toolllama_G123_dfs_train_downloaded1311_no_undetectable_errors_final_train_val.json \
-#     --output_dir /data6/polyakov/ToolBench/toollama_7B_post_finetuned_half_train_error_correction/ \
+#     --model_name_or_path toollama_7B_trained_on_data_cleaned_with_llama_2_train_part/checkpoint-900 \
+#     --data_path  data/toolbench_new_1311/self_correction_postfinetune/new_train_half_train_full_corrections.json \
+#     --eval_data_path data/toolbench_new_1311/cleaned_toolllama_G123_dfs_train_downloaded1311_no_undetectable_errors_final_train_val.json \
+#     --output_dir toollama_7B_post_finetuned_half_train_error_correction/ \
 #     --conv_template tool-llama-single-round \
 #     --bf16 False \
 #     --fp16 True \
@@ -276,9 +276,9 @@
 
 # python -m torch.distributed.run --nproc_per_node=8 --master_port=20001 toolbench/train/train_mem.py \
 #     --model_name_or_path /data5/about/llama-7b/ \
-#     --data_path  /data4/polyakov/instruction_tuning/ToolBench/data/toolbench_new_1311/self_correction_postfinetune/from_scratch_full_train_val_corrections.json \
-#     --eval_data_path /data4/polyakov/instruction_tuning/ToolBench/data/toolbench_new_1311/cleaned_toolllama_G123_dfs_train_downloaded1311_no_undetectable_errors_final_train_val.json \
-#     --output_dir /data7/polyakov/ToolBench/toollama_7B_from_scratch_full_train_full_val_corrections_v2/ \
+#     --data_path  data/toolbench_new_1311/self_correction_postfinetune/from_scratch_full_train_val_corrections.json \
+#     --eval_data_path data/toolbench_new_1311/cleaned_toolllama_G123_dfs_train_downloaded1311_no_undetectable_errors_final_train_val.json \
+#     --output_dir data/toollama_7B_from_scratch_full_train_full_val_corrections_v2/ \
 #     --conv_template tool-llama-single-round \
 #     --bf16 False \
 #     --fp16 True \
@@ -310,10 +310,10 @@ export PYTHONPATH=./
 export CUDA_VISIBLE_DEVICES="0,1,2,3,4,5,6,7"
 
 python -m torch.distributed.run --nproc_per_node=8 --master_port=20001 toolbench/train/train_mem.py \
-    --model_name_or_path /data6/polyakov/ToolBench/toollama_7B_trained_on_data_cleaned_with_llama_2_train_part/checkpoint-900 \
-    --data_path /data4/polyakov/instruction_tuning/ToolBench/data/toolbench_new_1311/self_correction_postfinetune/new_train_full_val_full_corrections_readable_correct.json \
-    --eval_data_path /data4/polyakov/instruction_tuning/ToolBench/data/toolbench_new_1311/cleaned_toolllama_G123_dfs_train_downloaded1311_no_undetectable_errors_final_train_val.json \
-    --output_dir /data7/polyakov/ToolBench/toollama_7B_post_finetuned_full_val_error_correction_attempt_2_12_06_2024_corrected/ \
+    --model_name_or_path toollama_7B_trained_on_data_cleaned_with_llama_2_train_part/checkpoint-900 \
+    --data_path data/toolbench_new_1311/self_correction_postfinetune/new_train_full_val_full_corrections_readable_correct.json \
+    --eval_data_path data/toolbench_new_1311/cleaned_toolllama_G123_dfs_train_downloaded1311_no_undetectable_errors_final_train_val.json \
+    --output_dir data/toollama_7B_post_finetuned_full_val_error_correction_attempt_2_12_06_2024_corrected/ \
     --conv_template tool-llama-single-round \
     --bf16 False \
     --fp16 True \

@@ -39,7 +39,7 @@ if args.llm is None or args.llm.lower() in ["gpt3", "gpt-3"]:
 elif args.llm.lower() in ["chatgpt"]:
     llm = ChatOpenAI(temperature=0.0)
 else:
-    tokenizer = AutoTokenizer.from_pretrained('/data6/polyakov/ToolAlpaca/vicuna-7b-toolalpaca_train_on_train_part', trust_remote_code=True)
+    tokenizer = AutoTokenizer.from_pretrained('<path_to_tokenizer>', trust_remote_code=True)
     model = AutoModelForCausalLM.from_pretrained(args.llm, trust_remote_code=True).half()
 
     generator = pipeline(

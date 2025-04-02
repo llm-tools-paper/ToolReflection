@@ -1,8 +1,8 @@
 import os
 import sys
-sys.path.insert(0, '/data2/polyakov/instruction_tuning/ToolBench')
-sys.path.insert(0, '/data2/polyakov/instruction_tuning/ToolBench/toolbench')
-sys.path.insert(0, '/data2/polyakov/instruction_tuning/ToolBench/toolbench/inference')
+sys.path.insert(0, './')
+sys.path.insert(0, './toolbench')
+sys.path.insert(0, './toolbench/inference')
 os.environ["CUDA_VISIBLE_DEVICES"]="0, 1"
 
 import argparse
@@ -33,13 +33,12 @@ parser.add_argument('--toolbench_key', type=str, default="",required=False, help
 parser.add_argument('--rapidapi_key', type=str, default="",required=False, help='your rapidapi key to request rapidapi service')
 parser.add_argument('--use_rapidapi_key', action="store_true", help="To use customized rapidapi service or not.")
 
-model_path = '/data6/ilseyar/toolbench/ToolLLaMA-2-7b'
-# model_path = '/data6/ilseyar/toolbench/model/ToolLLaMA-7b'
+model_path = 'data/model/ToolLLaMA-2-7b'
 args = parser.parse_args(['--model_path', model_path, 
-                          '--input_query_file', '/data2/ilseyar/Projects/toolformer_data_convertion/eval/G1_eval_query.json',
-                          '--output_answer_file', '/data2/polyakov/instruction_tuning/ToolBench/data/answer/test_toollama_2',
+                          '--input_query_file', 'data/toolformer_data_convertion/eval/G1_eval_query.json',
+                          '--output_answer_file', 'data/answer/test_toollama_2',
                           '--toolbench_key', '2TLxGfLkzebcy7trDP4RzqcbnuAFypTHbKlRNvYCGuVsn5Svv3',
-                          '--tool_root_dir', '/data2/polyakov/instruction_tuning/ToolBench/data/toolenv/tools'])
+                          '--tool_root_dir', 'data/toolenv/tools'])
 
 with open('data/self_correction/train_data_cleaned_g1_callable.json', 'r') as f:
     all_callable_examples = json.load(f)

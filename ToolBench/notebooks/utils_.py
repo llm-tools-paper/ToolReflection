@@ -15,7 +15,7 @@ tool_names = []
 cate_names = []
 
 tool_name_to_category_dict = dict()
-for cat_path in glob.glob('/data4/polyakov/instruction_tuning/ToolBench/data/toolbench_new_1311/toolenv/tools/*'):
+for cat_path in glob.glob('data/toolbench_new_1311/toolenv/tools/*'):
     cat_name = cat_path.split('/')[-1]
     for tool_path in glob.glob(cat_path + '/*'):
         tool_name = tool_path.split('/')[-1]

@@ -67,9 +67,9 @@ def prepare_dataset(dataset, api_to_url):
 
 if __name__=="__main__":
 	parser = ArgumentParser()
-	parser.add_argument("--api_to_urls_file", default="/data4/polyakov/instruction_tuning/ToolBench_pure_1/data/self_correction/dataset_gen/toolbenchv2_pangu_apis_urls_new.jsonl")
-	parser.add_argument("--input_dataset", default="/data4/polyakov/instruction_tuning/ToolBench_pure_1/data/self_correction/dataset_gen/challenging_tasks_ground_truth/")
-	parser.add_argument("--output_dataset", default="/data4/polyakov/instruction_tuning/ToolBench_pure_1/data/self_correction/dataset_gen/challenging_tasks_input/input.json")
+	parser.add_argument("--api_to_urls_file", default="data/self_correction/dataset_gen/toolbenchv2_pangu_apis_urls_new.jsonl")
+	parser.add_argument("--input_dataset", default="data/self_correction/dataset_gen/challenging_tasks_ground_truth/")
+	parser.add_argument("--output_dataset", default="data/self_correction/dataset_gen/challenging_tasks_input/input.json")
 	args = parser.parse_args()
 
 	api_to_url = load_json(args.api_to_urls_file)
